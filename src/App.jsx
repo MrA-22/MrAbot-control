@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 export default function App() {
-  const API = "https://your-railway-url";
+  const API = "mr-a-bot-production.up.railway.app";
 
   const [stats, setStats] = useState({ groups: 0, users: 0 });
   const [groups, setGroups] = useState([]);
