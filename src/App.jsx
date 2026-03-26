@@ -26,17 +26,20 @@ export default function App() {
   };
 
   const loadData = async () => {
-    const s = await fetch(API + "/stats").then(r => r.json());
-    const g = await fetch(API + "/groups").then(r => r.json());
-    const p = await fetch(API + "/progress").then(r => r.json());
-    const st = await fetch(API + "/status").then(r => r.json());
-
-    setStats(s);
-    setGroups(g);
-    setProgress(p);
-    setStatus(st.status);
+  try {
+      const s = await fetch(API + "/stats").then(r => r.json());
+      const g = await fetch(API + "/groups").then(r => r.json());
+      const p = await fetch(API + "/progress").then(r => r.json());
+      const st = await fetch(API + "/status").then(r => r.json());
+  
+      setStats(s);
+      setGroups(g);
+      setProgress(p);
+      setStatus(st.status);
+    } catch (err) {
+      console.error("API ERROR:", err);
+    }
   };
-
   useEffect(() => {
     loadData();
     const i = setInterval(loadData, 2000);
