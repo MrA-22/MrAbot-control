@@ -87,14 +87,6 @@ export default function App() {
 
   // ---------- DATA LOADING ----------
   const loadData = async () => {
-<<<<<<< HEAD
-  try {
-      const s = await fetch(API + "/stats").then(r => r.json());
-      const g = await fetch(API + "/groups").then(r => r.json());
-      const p = await fetch(API + "/progress").then(r => r.json());
-      const st = await fetch(API + "/status").then(r => r.json());
-  
-=======
     setLoading(true);
     setError("");
     try {
@@ -104,22 +96,10 @@ export default function App() {
         fetch(API + "/progress").then(r => r.json()),
         fetch(API + "/status").then(r => r.json())
       ]);
->>>>>>> 5631619 (Update frontend: App.jsx, package files, add style folder)
       setStats(s);
       setGroups(g);
       setProgress(p);
       setStatus(st.status);
-<<<<<<< HEAD
-    } catch (err) {
-      console.error("API ERROR:", err);
-    }
-  };
-  useEffect(() => {
-    loadData();
-    const i = setInterval(loadData, 2000);
-    return () => clearInterval(i);
-  }, []);
-=======
     } catch (e) {
       setError("Gagal load data. Cek koneksi atau API!");
     } finally {
@@ -128,7 +108,6 @@ export default function App() {
   };
 
   useEffect(() => { loadData(); }, []);
->>>>>>> 5631619 (Update frontend: App.jsx, package files, add style folder)
 
   // ---------- COMMAND ----------
   const sendCommand = async (cmd) => {
