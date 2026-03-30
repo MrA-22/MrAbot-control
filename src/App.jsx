@@ -70,7 +70,7 @@ const Spinner = () => (
 
 // -------------------- APP --------------------
 export default function App() {
-  const API = "https://mr-a-bot-production.up.railway.app";
+  const API = "https://mrabot-production.up.railway.app";
 
   // STATE
   const [stats, setStats] = useState({ groups: 0, users: 0 });
