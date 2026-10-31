@@ -100,7 +100,7 @@ const Spinner = () => (
 
 export default function App() {
   // Ganti URL ini jika backend sudah dipindahkan ke Render.
-  const API = "https://mrabot.render.com";
+  const API = "https://mrabot-production.up.railway.app";
 
   // STATE
   const [stats, setStats] = useState({ groups: 0, users: 0 });
@@ -674,7 +674,7 @@ export default function App() {
             <div className="w-64 bg-black/40 backdrop-blur-2xl rounded-2xl p-3 flex flex-col overflow-auto scrollbar-thin scrollbar-thumb-purple-500/50 scrollbar-track-black/20">
               <div className="flex justify-between mb-2">
                 <h3 className="text-lg font-semibold text-cyan-400 drop-shadow-lg">
-                  📜 Logs
+                 📜 Logs
                 </h3>
 
                 <Button
@@ -685,4 +685,18 @@ export default function App() {
                 </Button>
               </div>
 
-              <
+              <div className="flex-1 overflow-auto">
+                <AnimatePresence>
+                  {logs.map((l, i) => (
+                    <LogItem key={i} msg={l} />
+                  ))}
+                </AnimatePresence>
+              </div>
+            </div>
+
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
