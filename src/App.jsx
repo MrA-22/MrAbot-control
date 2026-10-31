@@ -100,7 +100,7 @@ const Spinner = () => (
 
 export default function App() {
   // Ganti URL ini jika backend sudah dipindahkan ke Render.
-  const API = "https://mrabot-production.up.railway.app";
+  const API = "https://mrabot.onrender.com";
 
   // STATE
   const [stats, setStats] = useState({ groups: 0, users: 0 });
